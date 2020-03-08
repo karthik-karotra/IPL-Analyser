@@ -19,7 +19,8 @@ public class IplAnalyser {
         this.sortedMap = new HashMap<>();
 
         this.sortedMap.put(SortedField.AVERAGE,Comparator.comparing(ipldata -> ipldata.battingAvg));
-        this.sortedMap.put(SortedField.STRIKE_RATE,Comparator.comparing(ipldata -> ipldata.strikRate));
+        this.sortedMap.put(SortedField.STRIKE_RATE,Comparator.comparing(ipldata -> ipldata.strikeRate));
+        this.sortedMap.put(SortedField.NO_OF_4S_AND_6S,Comparator.comparing(ipldata -> ipldata.noOfFours+ipldata.noOfSixes));
     }
 
     public int loadIplData(String csvFilePath) {
