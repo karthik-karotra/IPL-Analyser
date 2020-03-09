@@ -53,11 +53,20 @@ public class IplAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunData_WhenSortedInAverages_ShouldReturnBestStrikeRate() {
+    public void givenIPLMostRunData_WhenSortedOnAverages_ShouldReturnBestStrikeRate() {
         iplAnalyser.loadIplData(IPL_MOST_RUNS_FILE_PATH);
         String sortedStrikeRateData = iplAnalyser.getSortedCricketData(SortedField.AVERAGE);
         IplRunsCSV[] mostRunCsv = new Gson().fromJson(sortedStrikeRateData, IplRunsCSV[].class);
         Assert.assertEquals(134.62,mostRunCsv[0].strikeRate,0.0);
+
+    }
+
+    @Test
+    public void givenIPLMostRunData_WhenSortedOnRuns_ShouldReturnBestAverage() {
+        iplAnalyser.loadIplData(IPL_MOST_RUNS_FILE_PATH);
+        String sortedStrikeRateData = iplAnalyser.getSortedCricketData(SortedField.RUNS);
+        IplRunsCSV[] mostRunCsv = new Gson().fromJson(sortedStrikeRateData, IplRunsCSV[].class);
+        Assert.assertEquals(69.2,mostRunCsv[0].battingAvg,0.0);
 
     }
 }
