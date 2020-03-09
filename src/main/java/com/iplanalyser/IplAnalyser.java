@@ -47,7 +47,7 @@ public class IplAnalyser {
         if(iplCSVList == null || iplCSVList.size() == 0){
             throw new IplAnalyserException("No Data",IplAnalyserException.ExceptionType.CRICKET_DATA_NOT_FOUND);
         }
-        Comparator<IplRunsCSV> cricketComparator = Comparator.comparing(census -> census.battingAvg);
+      //  Comparator<IplRunsCSV> cricketComparator = Comparator.comparing(census -> census.battingAvg);
         this.sort(iplCSVList,this.sortedMap.get(sortedField));
         Collections.reverse(iplCSVList);
         String sortedStateCensus=new Gson().toJson(iplCSVList);
