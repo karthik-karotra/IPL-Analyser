@@ -107,6 +107,15 @@ public class IplAnalyserTest {
         Assert.assertEquals("Lasith Malinga", mostBowlingCsv[0].playerName);
     }
 
+    @Test
+    public void givenIPLMostBowlingData_WhenSorted_ShouldReturnBestBowlingAverageWithBestStrikingRate() {
+
+        iplAnalyser.loadIplData(IplAnalyser.Cricket.WICKETS,IPL_MOST_BOWLING_FILE_PATH);
+        String sortedData = iplAnalyser.getSortedCricketData(SortedField.BEST_BOWLING_AVG_WITH_BEST_STRIKE_RATE);
+        IplBowlingCSV[] mostBowlingCsv = new Gson().fromJson(sortedData, IplBowlingCSV[].class);
+        Assert.assertEquals("Krishnappa Gowtham", mostBowlingCsv[0].playerName);
+    }
+
 
 
 

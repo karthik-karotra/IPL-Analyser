@@ -32,6 +32,8 @@ public class IplAnalyser {
         this.sortedMap.put(SortedField.ECONOMY_RATE, Comparator.comparing(ipldata -> ipldata.economyRate));
         Comparator<CricketCsvDto> bestStrikeRateWith4And5Wickets = Comparator.comparing(ipldata -> ipldata.fourWickets + ipldata.fiveWickets);
         this.sortedMap.put(SortedField.STRIKE_RATE_WITH_4_AND_5_WICKET, bestStrikeRateWith4And5Wickets.thenComparing(ipldata -> ipldata.strikeRate));
+        Comparator<CricketCsvDto> bestBowlingAverageWithBestStrikeRate = Comparator.comparing(ipldata -> ipldata.average);
+        this.sortedMap.put(SortedField.BEST_BOWLING_AVG_WITH_BEST_STRIKE_RATE, bestBowlingAverageWithBestStrikeRate.thenComparing(ipldata -> ipldata.strikeRate));
     }
 
     public int loadIplData(Cricket cricket,String... csvFilePath) {
