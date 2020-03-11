@@ -124,5 +124,11 @@ public class IplAnalyserTest {
         IplBowlingCSV[] mostBowlingCsv = new Gson().fromJson(sortedData, IplBowlingCSV[].class);
         Assert.assertEquals("Imran Tahir", mostBowlingCsv[0].playerName);
     }
-
+    @Test
+    public void givenIPLMostBowlingData_WhenSorted_ShouldReturnBestBattingAndBowlingAverage() {
+        iplAnalyser.loadIplData(IplAnalyser.Cricket.ALL_ROUNDER,IPL_MOST_RUNS_FILE_PATH,IPL_MOST_BOWLING_FILE_PATH);
+        String sortedCricketData = iplAnalyser.getSortedCricketData(SortedField.BEST_BATTING_BOWLING_AVG);
+        IplBowlingCSV[] mostBowlingCsv = new Gson().fromJson(sortedCricketData, IplBowlingCSV[].class);
+        Assert.assertEquals("Marcus Stoinis",mostBowlingCsv[0].playerName);
+    }
 }

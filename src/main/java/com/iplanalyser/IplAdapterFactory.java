@@ -8,6 +8,8 @@ if(cricket.equals(IplAnalyser.Cricket.RUNS))
     return new IplRunsAdapter().loadIplData(csvFilePath);
 else if (cricket.equals(IplAnalyser.Cricket.WICKETS))
     return new IplBowlingAdapter().loadIplData(csvFilePath);
+else if(cricket.equals(IplAnalyser.Cricket.ALL_ROUNDER))
+    return new AllRounderAverage().loadIplData(csvFilePath);
 else
     throw new IplAnalyserException("NO FILE FOUND!!!!",IplAnalyserException.ExceptionType.CRICKET_DATA_NOT_FOUND);
     }
