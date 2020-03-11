@@ -8,6 +8,7 @@ public class CricketCsvDto {
         public int noOfFours;
         public int noOfSixes;
         public String playerName;
+        public double economyRate;
        /* public int fourWickets;
         public int fiveWickets;*/
 
@@ -24,6 +25,7 @@ public class CricketCsvDto {
             average = mostBowlingCsv.average;
             playerName=mostBowlingCsv.playerName;
             strikeRate = mostBowlingCsv.strikeRate;
+            economyRate=mostBowlingCsv.economyRate;
 
         }
     }

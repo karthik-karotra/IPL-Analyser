@@ -29,6 +29,7 @@ public class IplAnalyser {
         Comparator<CricketCsvDto> runsWithAvg=Comparator.comparing(ipldata -> ipldata.runs);
         this.sortedMap.put(SortedField.BEST_RUNS_WITH_BEST_AVG,runsWithAvg.thenComparing(ipldata -> ipldata.average));
 
+        this.sortedMap.put(SortedField.ECONOMY_RATE,Comparator.comparing(ipldata -> ipldata.economyRate));
     }
 
     public int loadIplData(Cricket cricket,String... csvFilePath) {
