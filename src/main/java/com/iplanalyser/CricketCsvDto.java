@@ -9,8 +9,8 @@ public class CricketCsvDto {
         public int noOfSixes;
         public String playerName;
         public double economyRate;
-       /* public int fourWickets;
-        public int fiveWickets;*/
+        public int fourWickets;
+        public int fiveWickets;
 
     public CricketCsvDto(IplRunsCSV mostRunCsv) {
             runs = mostRunCsv.runs;
@@ -26,6 +26,8 @@ public class CricketCsvDto {
             playerName=mostBowlingCsv.playerName;
             strikeRate = mostBowlingCsv.strikeRate;
             economyRate=mostBowlingCsv.economyRate;
+        fourWickets = mostBowlingCsv.fourWickets;
+        fiveWickets = mostBowlingCsv.fiveWickets;
 
         }
     }

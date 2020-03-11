@@ -16,9 +16,11 @@ public class IplBowlingCSV {
     public double economyRate;
 
 
-   /* @CsvBindByName(column = "4w",required = true)
+    @CsvBindByName(column = "4w",required = true)
     public int fourWickets;
 
+
     @CsvBindByName(column = "5w",required = true)
-    public int fiveWickets;*/
+    public int fiveWickets;
+
 }
