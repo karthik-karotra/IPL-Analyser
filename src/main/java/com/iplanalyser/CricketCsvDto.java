@@ -23,6 +23,7 @@ public class CricketCsvDto {
     public CricketCsvDto(IplBowlingCSV mostBowlingCsv) {
             average = mostBowlingCsv.average;
             playerName=mostBowlingCsv.playerName;
+            strikeRate = mostBowlingCsv.strikeRate;
 
         }
     }
