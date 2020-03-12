@@ -1,6 +1,6 @@
 package com.iplanalyser;
 
-public class CricketCsvDto {
+public class IplCsvDto {
 
         public int runs;
         public double average;
@@ -16,7 +16,7 @@ public class CricketCsvDto {
         public double battingAverage;
         public int allWickets;
 
-    public CricketCsvDto(IplRunsCSV mostRunCsv) {
+    public IplCsvDto(IplRunsCSV mostRunCsv) {
             runs = mostRunCsv.runs;
             average = mostRunCsv.average;
             strikeRate = mostRunCsv.strikeRate;
@@ -26,7 +26,7 @@ public class CricketCsvDto {
             battingAverage=mostRunCsv.average;
         }
 
-    public CricketCsvDto(IplBowlingCSV mostBowlingCsv) {
+    public IplCsvDto(IplBowlingCSV mostBowlingCsv) {
             average = mostBowlingCsv.average;
             playerName=mostBowlingCsv.playerName;
             strikeRate = mostBowlingCsv.strikeRate;

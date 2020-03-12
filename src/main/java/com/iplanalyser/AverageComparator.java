@@ -2,10 +2,10 @@ package com.iplanalyser;
 
 import java.util.Comparator;
 
-public class AverageComparator implements Comparator<CricketCsvDto> {
+public class AverageComparator implements Comparator<IplCsvDto> {
 
     @Override
-    public int compare(CricketCsvDto p1, CricketCsvDto p2) {
+    public int compare(IplCsvDto p1, IplCsvDto p2) {
         int i= ((int)(p1.battingAverage+p1.bowlerAverage));
         return i;
     }
