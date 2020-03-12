@@ -10,7 +10,7 @@ public class IplAnalyser {
     Map<SortedField,Comparator<CricketCsvDto>> sortedMap;
     Map<String,CricketCsvDto> cricketCsvDtoMap;
     public enum Cricket {
-        RUNS,WICKETS, ALL_ROUNDER;
+        RUNS,WICKETS, ALL_ROUNDER, BEST_ALL_ROUNDER;
     }
 
 
@@ -37,6 +37,7 @@ public class IplAnalyser {
         Comparator<CricketCsvDto> maximumWicketsWithBestBowlingAverage = Comparator.comparing(ipldata -> ipldata.wickets);
         this.sortedMap.put(SortedField.MAX_WICKETS_WITH_BEST_BOWLING_AVERAGE, maximumWicketsWithBestBowlingAverage.thenComparing(ipldata -> ipldata.average));
         this.sortedMap.put(SortedField.BEST_BATTING_BOWLING_AVG,new AverageComparator());
+        this.sortedMap.put(SortedField.BEST_ALL_ROUNDER,new AllRounderComparator());
     }
 
     public int loadIplData(Cricket cricket,String... csvFilePath) {
