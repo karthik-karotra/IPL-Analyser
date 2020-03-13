@@ -1,5 +1,7 @@
 package com.iplanalyser;
 
+import com.csvreader.CSVBuilderException;
+
 public class IplAnalyserException extends RuntimeException {
     enum ExceptionType {
         CRICKET_FILE_PROBLEM,CRICKET_DATA_NOT_FOUND;

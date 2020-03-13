@@ -35,5 +35,9 @@ public abstract class IplAdapter extends RuntimeException{
             return iplMap;
         } catch (IOException e) {
             throw  new IplAnalyserException(e.getMessage(),IplAnalyserException.ExceptionType.CRICKET_FILE_PROBLEM);        }
-    }
+
+    catch (RuntimeException e) {
+        throw  new IplAnalyserException(e.getMessage(),IplAnalyserException.ExceptionType.CRICKET_FILE_PROBLEM);        }
+}
+
 }

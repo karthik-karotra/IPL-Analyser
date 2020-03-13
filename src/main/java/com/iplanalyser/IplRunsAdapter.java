@@ -2,7 +2,6 @@ package com.iplanalyser;
 
 import com.csvreader.CSVBuilderFactory;
 import com.csvreader.ICSVBuilder;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -12,12 +11,6 @@ import java.util.Map;
 import java.util.stream.StreamSupport;
 
 public class IplRunsAdapter extends IplAdapter {
-
-  /*  @Override
-    public Map<String, CricketCsvDto> loadIplData(String... csvFilePath) {
-        Map<String,CricketCsvDto> cricketCsvDtoMap =super.loadIplData(IplRunsCSV.class,csvFilePath[0]);
-        return cricketCsvDtoMap;
-    }*/
 
   @Override
     public Map<String, IplCsvDto> loadIplData(String... csvFilePath) {
@@ -39,7 +32,7 @@ public class IplRunsAdapter extends IplAdapter {
                     .forEach(mergedData->{cricketCsvDtoMap.get(mergedData.playerName).bowlerAverage=mergedData.average;
                         cricketCsvDtoMap.get(mergedData.playerName).allWickets=mergedData.wickets;});
         } catch (IOException e) {
-            e.printStackTrace();
-        }
+            throw  new IplAnalyserException(e.getMessage(),IplAnalyserException.ExceptionType.CRICKET_FILE_PROBLEM);        }
+
     }
 }
